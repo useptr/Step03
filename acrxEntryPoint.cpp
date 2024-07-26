@@ -151,7 +151,9 @@ public:
 	}
 	static void AsdkStep03_CREATE_BLOCK_RECORD(void) {
 		TCHAR recordName[128];
-		acedGetString(NULL, _T("\nEnter record name: "), recordName);
+		if (acedGetString(NULL, _T("\nEnter record name: "), recordName) != RTNORM)
+			return;
+
 		// Create a new block definition named "EMPLOYEE"
 		if (createBlockRecord(recordName) != Acad::eOk) {
 			acutPrintf(_T("\nERROR: Couldn't create block record"));
@@ -162,7 +164,8 @@ public:
 	static void AsdkStep03_CREATE_LAYER(void) {
 		AcDbObjectId layerId;
 		TCHAR layerName[128];
-		acedGetString(NULL, _T("\nEnter layer name: "), layerName);
+		if (acedGetString(NULL, _T("\nEnter layer name: "), layerName) != RTNORM)
+			return;
 		if (createLayer(layerName, layerId) != Acad::eOk) {
 			acutPrintf(_T("\nERROR: Couldn't create layer record"));
 			return;
