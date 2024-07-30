@@ -1,8 +1,8 @@
 #pragma once
 #include "StdAfx.h" 
-//Declaration of createLayer():
-Acad::ErrorStatus createLayer(const TCHAR* layerName, AcDbObjectId& layerId);
+//Declaration of CreateLayer():
+Acad::ErrorStatus CreateLayer(const TCHAR* aszLayerName, AcDbObjectId& arCLayerId);
 
-//Declaration of createBlockRecord():
-Acad::ErrorStatus createBlockRecord(const TCHAR* name);
+//Declaration of CreateBlockRecord():
+Acad::ErrorStatus CreateBlockRecord(const TCHAR* aszBlockTableRecordName);
 
